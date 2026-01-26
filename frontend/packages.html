@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kashmir Packages</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>Available Kashmir Tour Packages</h1>
+<div id="packageList"></div>
+
+<script>
+fetch("http://127.0.0.1:5000/api/packages")
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById("packageList");
+    data.forEach(pkg => {
+      list.innerHTML += `
+        <div class="card">
+          <h3>${pkg.title}</h3>
+          <p>Days: ${pkg.days}</p>
+          <p>Places: ${pkg.places.join(", ")}</p>
+          <p>Price: ₹${pkg.price}</p>
+          <button onclick="alert('Booking coming soon')">Book Now</button>
+        </div>
+      `;
+    });
+  })
+  .catch(() => {
+    document.getElementById("packageList").innerHTML =
+      "<p style='color:red'>Backend not connected</p>";
+  });
+</script>
+
+</body>
+</html>
