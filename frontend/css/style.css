@@ -1,45 +1,49 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     margin: 0;
     padding: 0;
   }
   
   header {
-    background: #0a3d62;
+    background: #006666;
     color: white;
     padding: 15px;
   }
   
   nav a {
     color: white;
-    margin-right: 15px;
+    margin: 10px;
     text-decoration: none;
   }
   
   .hero {
-    padding: 50px;
     text-align: center;
-    background: #dff9fb;
+    padding: 20px;
   }
   
-  .btn {
-    background: orange;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
+  .hero img {
+    width: 90%;
+    max-height: 300px;
+    object-fit: cover;
   }
   
   .card {
     border: 1px solid #ccc;
     margin: 15px;
     padding: 15px;
-    border-radius: 5px;
+    width: 300px;
   }
   
-  footer {
-    background: #0a3d62;
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  button {
+    background: green;
     color: white;
-    text-align: center;
-    padding: 10px;
+    border: none;
+    padding: 8px;
   }
   

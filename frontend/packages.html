@@ -7,21 +7,24 @@
 <body>
 
 <h1>Available Kashmir Tour Packages</h1>
+
 <div id="packageList"></div>
 
 <script>
-fetch("http://127.0.0.1:5000/api/packages")
+fetch("http://127.0.0.1:5000/api/admin/packages")
   .then(res => res.json())
   .then(data => {
     const list = document.getElementById("packageList");
+
     data.forEach(pkg => {
       list.innerHTML += `
         <div class="card">
+          <img src="images/gulmarg.jpg">
           <h3>${pkg.title}</h3>
           <p>Days: ${pkg.days}</p>
           <p>Places: ${pkg.places.join(", ")}</p>
           <p>Price: ₹${pkg.price}</p>
-          <button onclick="alert('Booking coming soon')">Book Now</button>
+          <button>Book Now</button>
         </div>
       `;
     });
